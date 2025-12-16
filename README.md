@@ -1,5 +1,8 @@
 # QBridge athleisure OMS MVP (Python + SQL) for Shopify
 
+This project is a simple order management system built to support an online activewear brand that sells only in Canada. Customers shop and pay through a Shopify website, while this system works quietly in the background to handle operations. It keeps track of products, sizes, and colors (SKUs), manages inventory levels, records orders coming in from Shopify, and shows their status as they move from paid to packed and shipped. The goal is to make sure orders are processed correctly, inventory stays accurate, and nothing is oversold.
+The system is built using Python and SQL, which makes it reliable, fast, and easy to grow over time. It gives the brand owner a clear view of daily sales, stock levels, and order progress without unnecessary complexity. By keeping the platform simple and focused only on what matters, it reduces mistakes, saves time, and allows the business to scale smoothly as order volume increases.
+
 This repo is a minimal back-office OMS:
 - Shopify storefront handles checkout
 - OMS handles inventory, order status, fulfillment workflow, and basic reporting
