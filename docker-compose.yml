@@ -21,5 +21,15 @@ services:
       - "4010:4010"
     restart: unless-stopped
 
+iam-service:
+    build: ./iam-service
+    env_file:
+      - ./iam-service/.env
+    depends_on:
+      - mongo
+    ports:
+      - "4010:4010"
+    restart: unless-stopped
+
 volumes:
   mongo_data:
