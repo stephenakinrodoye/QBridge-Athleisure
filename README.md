@@ -140,9 +140,34 @@ It manages staff accounts (admin, manager, employee), enforces role-based access
 This service is designed for internal use only and runs alongside the Python-based Order Management System (OMS).
 
 The IAM service provides:
-
 Authentication (login/logout/me)
-
 Employee profiles (self-edit)
-
 Admin/Manager employee management (CRUD)
+
+## 9) Chat Service
+
+The Chat Service provides real-time direct messaging (DM) and group chat functionality for the QBridge Athleisure internal dashboard.
+
+It is built with Node.js, Express, Socket.IO, and MongoDB, and integrates with the IAM Service for authentication. Users authenticate via JWTs issued by IAM and stored in HTTP-only cookies, which are validated during both REST requests and WebSocket connections.
+
+The service supports:
+- Direct messages and group conversations
+- Real-time message delivery using WebSockets
+- Persistent message and conversation storage
+- Secure access control based on authenticated users
+
+This service is intended for internal use only and runs alongside the IAM Service and OMS within the same repository.
+
+## 10) Dashboard Frontend
+
+The Dashboard is a Next.js web application that serves as the internal interface for QBridge Athleisure staff.
+
+It allows authenticated users to:
+- Log in using the IAM Service
+- View their profile and role
+- Access internal tools such as real-time chat
+- Participate in direct messages and group conversations
+
+The dashboard communicates with backend services (IAM and Chat) via secure HTTP requests and WebSocket connections, using cookie-based authentication for session management.
+
+This frontend is designed for internal staff only (admin, manager, employee) and is developed and deployed alongside the backend services in this repository.
