@@ -21,7 +21,7 @@ services:
       - "4010:4010"
     restart: unless-stopped
 
-iam-service:
+  iam-service:
     build: ./iam-service
     env_file:
       - ./iam-service/.env
@@ -30,6 +30,17 @@ iam-service:
     ports:
       - "4010:4010"
     restart: unless-stopped
+
+  chat-service:
+    build: ./chat-service
+    env_file:
+      - ./chat-service/.env
+    depends_on:
+      - mongo
+    ports:
+      - "4020:4020"
+    restart: unless-stopped
+
 
 volumes:
   mongo_data:
